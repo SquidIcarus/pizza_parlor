@@ -2,7 +2,7 @@
 
 # https://squidicarus.github.io/pizza_parlor/
 
-## Mr. Roboger's Numberhood
+## Pizza Parlor##
 
 A website to build your favorite pizza!
 
