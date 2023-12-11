@@ -53,7 +53,24 @@ function addToppings(event) {
     const orderTotal = new OrderTotal();
     orderTotal.addPizza(pizza);
 
-    console.log("Total Pizzas;", orderTotal.pizzas);
+    displayBuiltPizza(orderTotal.pizzas);
+
+    function displayBuiltPizza(pizzas) {
+        const builtPizzaDetails = document.getElementById("builtPizzaDetails");
+        builtPizzaDetails.innerHTML = "";
+
+        pizzas.forEach((pizza, index) => {
+            const pizzaInfo = document.createElement("div");
+            pizzaInfo.innerHTML = `<h3>Pizza ${index + 1}:<h /3>
+                <p>Size: ${pizza.size}</p>
+                <p>Dough: ${pizza.dough}</p>
+                <p>Sauce: ${pizza.sauce}</p>
+                <p>Toppings: ${pizza.toppings.join(", ")}</p>
+                <p>Cheese: ${pizza.cheese}</p>`;
+            builtPizzaDetails.appendChild(pizzaInfo);
+        });
+    }
+
 
     document.getElementById("pizzaOrder").reset
 }
