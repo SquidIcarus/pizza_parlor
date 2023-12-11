@@ -26,7 +26,6 @@ const orderTotal = new OrderTotal();
 // User Interface Logic
 
 
-
 function addToppings(event) {
     event.preventDefault();
 
@@ -38,12 +37,7 @@ function addToppings(event) {
     const toppingCheckboxes = document.querySelectorAll('input[name="topping"]:checked');
     const toppings = Array.from(toppingCheckboxes).map(checkbox => checkbox.value);
 
-    const size = sizeElem.value;
-    const dough = doughElem.value;
-    const sauce = sauceElem.value;
-    const cheese = cheeseElem.value;
-
-    if (!size || !dough || !sauce || !cheese || toppings.length === 0) {
+    if (!sizeElem || !doughElem || !sauceElem || !cheeseElem || toppings.length === 0) {
         errorMessage.textContent = "Please select an item from each category.";
         errorMessage.style.display = "block";
         return;
@@ -51,11 +45,13 @@ function addToppings(event) {
 
     errorMessage.style.display = "none";
 
-    const pizza = new MyPie(size, dough, sauce, toppings, cheese);
+    const size = sizeElem.value;
+    const dough = doughElem.value;
+    const sauce = sauceElem.value;
+    const cheese = cheeseElem.value;
 
-    // toppings.forEach((checkbox) => {
-    //     pizza.addTopping(checkbox.value);
-    // });
+
+    const pizza = new MyPie(size, dough, sauce, toppings, cheese);
 
     orderTotal.addPizza(pizza);
     displayBuiltPizzas(orderTotal.pizzas);

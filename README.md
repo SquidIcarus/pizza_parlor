@@ -44,6 +44,7 @@ and click on the "Code" button and copy the URL.
 ## Known Bugs
 - Error message does't work as intended
 - Still need to add price and total cost
+- Still needs style...
 
 ## TEST ##
 ```
