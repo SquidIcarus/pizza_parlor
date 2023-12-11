@@ -1,3 +1,50 @@
+# Object-Oriented Code Review 4
+
+# https://squidicarus.github.io/pizza_parlor/
+
+## Mr. Roboger's Numberhood
+
+A website to build your favorite pizza!
+
+## Main objectives for this project
+
+- Constructors & prototypes are used successfully.
+- Application works as expected.
+- Tests are included for each business logic behavior and code is committed after each test passes.
+- Project is in a polished, portfolio-quality state.
+- The prompt's required functionality and baseline project requirements are in place by the deadline.
+
+## Setup/Installation Requirements
+
+**How to clone repository**
+
+1. Go to 
+**https://github.com/SquidIcarus/pizza_parlor.git**
+and click on the "Code" button and copy the URL.
+
+2. Open Terminal/GitBash
+
+3. Within the desired directory, use the **git clone** command followed by the copied repository URL.
+
+4. Press enter and the repository should be cloned to your directory.
+
+
+
+## Technologies used:
+
+**software Tools**
+- GitBash
+- VsCode
+
+**Language**
+- HTML
+- CSS
+- JavaScript
+
+## Known Bugs
+- Error message does't work as intended
+- Still need to add price and total cost
+
 ## TEST ##
 ```
 DESCRIPTION: OrderTotal(pizza);
@@ -29,3 +76,6 @@ EXPECT: pizza: Array(1)
         length: 1;
 
 ```
+
+## License
+[Copyright © 2023 Landon Leadford](LICENSE.txt)
