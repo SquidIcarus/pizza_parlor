@@ -1,7 +1,7 @@
 //Business Logic
 
 function OrderTotal() {
-    this.pizza = [];
+    this.pizzas = [];
     this.side = {};
     this.drink = {};
     this.dessert = {};
@@ -20,7 +20,7 @@ MyPie.prototype.addTopping = function (topping) {
 };
 
 OrderTotal.prototype.addPizza = function (pizza) {
-    this.pizza.push(pizza);
+    this.pizzas.push(pizza);
 }
 
 // User Interface Logic
@@ -28,15 +28,32 @@ OrderTotal.prototype.addPizza = function (pizza) {
 function addToppings(event) {
     event.preventDefault();
 
+    const sizeInputs = document.querySelectorAll('input[name="size"]');
+    let selectedSize = "";
+    sizeInputs.forEach((input) => {
+        if (input.checked) {
+            selectedSize = input.value;
+        }
+    });
+
+    const dough = document.querySelector('input[name="dough"]:checked').value;
+    const sauce = document.querySelector('input[name="sauce"]:checked').value;
+    const cheese = document.querySelector('input[name="cheese"]:checked').value;
     const checkboxes = document.querySelectorAll('input[name="topping"]:checked');
-    if (checkboxes.length === 0) {
+    if (selectedSize === "" || checkboxes.length === 0) {
         return;
     }
 
-    const pizzaOne = new MyPie("large", "Chicago", "Tomato", [], "Mozzarella");
+    const pizza = new MyPie(selectedSize, dough, sauce, [], cheese);
+
     checkboxes.forEach((checkbox) => {
-        pizzaOne.addTopping(checkbox.value);
+        pizza.addTopping(checkbox.value);
     });
 
-    console.log(pizzaOne);
+    const orderTotal = new OrderTotal();
+    orderTotal.addPizza(pizza);
+
+    console.log("Total Pizzas;", orderTotal.pizzas);
+
+    document.getElementById("pizzaOrder").reset
 }

@@ -10,6 +10,28 @@
 </head>
 <h1>Build Your Pizza!</h1>
 <form id="pizzaOrder">
+    <h2>Size</h2>
+    <label><input type="radio" name="size" value="small"> Small 8"</label><br />
+    <label><input type="radio" name="size" value="medium"> Medium 12"</label><br />
+    <label><input type="radio" name="size" value="large"> Large 14"</label><br />
+    <label><input type="radio" name="size" value="party"> Party 18"</label><br />
+
+    <h2>Sauce</h2>
+    <label><input type="radio" name="sauce" value="tomato"> Tomato</label><br />
+    <label><input type="radio" name="sauce" value="pesto"> Pesto</label><br />
+    <label><input type="radio" name="sauce" value="white-sauce"> White Sauce</label><br />
+    <label><input type="radio" name="sauce" value="tomato"> Tomato</label><br />
+    <label><input type="radio" name="sauce" value="bbq"> BBQ</label><br />
+    <label><input type="radio" name="sauce" value="buffalo"> Buffalo</label><br />
+
+    <h2>Dough</h2>
+    <label><input type="radio" name="dough" value="sourdough"> Sourdough</label><br />
+    <label><input type="radio" name="dough" value="thin-crust"> Thin Crust</label><br />
+    <label><input type="radio" name="dough" value="new-york-style"> New York Style</label><br />
+    <label><input type="radio" name="dough" value="chicago style"> Chicago Style</label><br />
+    <label><input type="radio" name="dough" value="detroit-style"> Detroit Style</label><br />
+    <label><input type="radio" name="dough" value="gluten-free"> Gluten Free</label><br />
+
     <h2>Toppings</h2>
     <label><input type="checkbox" name="topping" value="pepperoni"> Pepperoni</label><br />
     <label><input type="checkbox" name="topping" value="sausage"> Sausage</label><br />
@@ -20,7 +42,16 @@
     <label><input type="checkbox" name="topping" value="olive"> Olive</label><br />
     <label><input type="checkbox" name="topping" value="pineapple"> Pineapple</label><br />
 
-    <input type="submit" value="Add Topping" onclick="addToppings(event)">
+    <h2>Cheese</h2>
+    <label><input type="radio" name="cheese" value="mozzarella"> Mozzarella</label><br />
+    <label><input type="radio" name="cheese" value="smoked-gouda"> Smoked Gouda</label><br />
+    <label><input type="radio" name="cheese" value="parmesan"> Parmesan</label><br />
+    <label><input type="radio" name="cheese" value="gruyere"> Gruyere</label><br />
+    <label><input type="radio" name="cheese" value="ricotta"> Ricotta</label><br />
+    <label><input type="radio" name="cheese" value="goat-cheese"> Goat Cheese</label><br />
+
+
+    <input type="submit" value="Build Pizza" onclick="addToppings(event)">
 
 </form>
 
