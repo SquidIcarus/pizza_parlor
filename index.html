@@ -28,7 +28,6 @@
     <label><input type="radio" name="sauce" value="tomato"> Tomato</label><br />
     <label><input type="radio" name="sauce" value="pesto"> Pesto</label><br />
     <label><input type="radio" name="sauce" value="white-sauce"> White Sauce</label><br />
-    <label><input type="radio" name="sauce" value="tomato"> Tomato</label><br />
     <label><input type="radio" name="sauce" value="bbq"> BBQ</label><br />
     <label><input type="radio" name="sauce" value="buffalo"> Buffalo</label><br />
 
@@ -54,6 +53,7 @@
     <input type="submit" value="Build Pizza" onclick="addToppings(event)">
 </form>
 
+<div id="errorMessage" style="display: none; color: red; font-weight: bold;"></div>
 <div id="builtPizzaDetails"></div>
 
 <body>

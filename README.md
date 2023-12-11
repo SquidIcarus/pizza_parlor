@@ -1,10 +1,10 @@
 ## TEST ##
 ```
-DESCRIPTION: OrderTotal(pizza, sides, drinks, dessert);
+DESCRIPTION: OrderTotal(pizza);
 
-TEST: “Creates an object of empty strings to hold the total order of pizzas, sides, drinks and desserts”;
+TEST: “Creates an object that holds an array of built pizzas”;
 CODE: let wholeOrder = new OrderTotal();
-EXPECT: _OrderTotal_ {pizza: {…}, side: {…}, drink: {…}, dessert: {…}};
+EXPECT: _OrderTotal_ {pizzas: Array(0)}
 
 DESCRIPTION: MyPie(size, dough, sauce, topping, cheese);
 
