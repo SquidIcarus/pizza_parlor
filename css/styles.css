@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.container>div {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#errorMessage {
+    text-align: center;
+    font-size: 50px;
+}
+
+#builtPizzaDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
