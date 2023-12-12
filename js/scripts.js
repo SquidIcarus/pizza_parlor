@@ -30,7 +30,10 @@ MyPie.prototype.sizePrice = function () {
         "large": 12,
         "party": 15
     };
-    this.price = sizePrices[this.size] || 0;
+    const basePrice = sizePrices[this.size] || 0;
+    const toppingPrice = this.toppings.length * 2
+
+    this.price = basePrice + toppingPrice;
 }
 
 // User Interface Logic
@@ -75,12 +78,14 @@ function displayBuiltPizzas(pizzas) {
     pizzas.forEach((pizza, index) => {
 
         const pizzaInfo = document.createElement("div");
-        pizzaInfo.innerHTML = `<h3>Pizza ${index + 1}:</h3>
+        pizzaInfo.innerHTML =
+            `<h3>Pizza ${index + 1}:</h3>
                 <p>Size: ${pizza.size}</p>
                 <p>Dough: ${pizza.dough}</p>
                 <p>Sauce: ${pizza.sauce}</p>
                 <p>Toppings: ${pizza.toppings.join(", ")}</p>
-                <p>Cheese: ${pizza.cheese}</p>`;
+                <p>Cheese: ${pizza.cheese}</p>
+                <p>Price: $${pizza.price}</p>`;
         builtPizzaDetails.appendChild(pizzaInfo);
 
         document.getElementById("pizzaOrder").reset();
