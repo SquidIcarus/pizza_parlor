@@ -23,6 +23,16 @@ OrderTotal.prototype.addPizza = function (pizza) {
 
 const orderTotal = new OrderTotal();
 
+MyPie.prototype.sizePrice = function () {
+    const sizePrices = {
+        "small": 8,
+        "medium": 10,
+        "large": 12,
+        "party": 15
+    };
+    this.price = sizePrices[this.size] || 0;
+}
+
 // User Interface Logic
 
 
@@ -52,6 +62,7 @@ function addToppings(event) {
 
 
     const pizza = new MyPie(size, dough, sauce, toppings, cheese);
+    pizza.sizePrice();
 
     orderTotal.addPizza(pizza);
     displayBuiltPizzas(orderTotal.pizzas);
