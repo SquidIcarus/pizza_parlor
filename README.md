@@ -82,6 +82,12 @@ TEST: "Defines the price for each MyPie property this.price"
 CODE:  pizzaOne.sizePrice();
 EXPECT: 12
 
+DESCRIPTION: OrderTotal.prototype.calculateTotalPrice() 
+
+TEST: "Calculates total MyPie prices" 
+CODE: OrderTotal.prototype.calculateTotalPrice()
+EXPECT: 
+
 ```
 
 ## License

@@ -2,6 +2,7 @@
 
 function OrderTotal() {
     this.pizzas = [];
+    this.totalPrice = 0;
 }
 
 function MyPie(size, dough, sauce, toppings, cheese) {
@@ -36,6 +37,10 @@ MyPie.prototype.sizePrice = function () {
     this.price = basePrice + toppingPrice;
 }
 
+// OrderTotal.prototype.calculateTotalPrice = function () {
+//     return this.pizzas.reduce((total, pizza)) => total + pizza.price, 0);
+// };
+
 // User Interface Logic
 
 
@@ -47,7 +52,11 @@ function addToppings(event) {
     const doughElem = document.querySelector('input[name="dough"]:checked');
     const sauceElem = document.querySelector('input[name="sauce"]:checked');
     const cheeseElem = document.querySelector('input[name="cheese"]:checked');
+
+
     const toppingCheckboxes = document.querySelectorAll('input[name="topping"]:checked');
+
+
     const toppings = Array.from(toppingCheckboxes).map(checkbox => checkbox.value);
 
     if (!sizeElem || !doughElem || !sauceElem || !cheeseElem || toppings.length === 0) {
@@ -74,6 +83,7 @@ function addToppings(event) {
 function displayBuiltPizzas(pizzas) {
     const builtPizzaDetails = document.getElementById("builtPizzaDetails");
     builtPizzaDetails.innerHTML = "";
+    builtPizzaDetails.classList.add("border-after-submit");
 
     pizzas.forEach((pizza, index) => {
 
@@ -99,6 +109,5 @@ window.onload = function () {
         addToppings(event)
     });
 }
-
 
 
